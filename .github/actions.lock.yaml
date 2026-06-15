@@ -1,21 +1,21 @@
 version: 1
-generated_at: 2026-06-11T15:38:12Z
+generated_at: 2026-06-15T13:14:55Z
 internal: []
 trusted:
   - action: actions/checkout
     refs:
-      - v2
+      - ee0669bd1cc54295c223e0bb666b733df41de1c5
     occurrences:
-      v2:
+      ee0669bd1cc54295c223e0bb666b733df41de1c5:
         .github/workflows/docker-build.yml:
           - jobs.build.steps.[0].uses
         .github/workflows/python-package.yml:
           - jobs.build.steps.[0].uses
   - action: actions/setup-python
     refs:
-      - v4.0.0
+      - d09bd5e6005b175076f227b13d9730d56e9dcfcb
     occurrences:
-      v4.0.0:
+      d09bd5e6005b175076f227b13d9730d56e9dcfcb:
         .github/workflows/python-package.yml:
           - jobs.build.steps.[1].uses
 external:
