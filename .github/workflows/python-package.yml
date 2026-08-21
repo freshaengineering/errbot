@@ -29,10 +29,12 @@ jobs:
         api-key: ${{ secrets.GH_FRESHAENGINEERING_STEP_SECURITY_API_KEY }}
 
     - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@d09bd5e6005b175076f227b13d9730d56e9dcfcb # v4.0.0
+    - name: Setup mise
+      uses: step-security/mise-action@2796166110dee826668caddd4bffedae5116e7cd # v4.2.0
       with:
-        python-version: ${{ matrix.python-version }}
+        mise_toml: |
+          [tools]
+          python = "${{ matrix.python-version }}"
 
     - name: Install dependencies
       run: |

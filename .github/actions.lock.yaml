@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-06-15T13:14:55Z
+generated_at: 2026-08-21T11:40:11Z
 internal: []
 trusted:
   - action: actions/checkout
@@ -8,14 +8,7 @@ trusted:
     occurrences:
       ee0669bd1cc54295c223e0bb666b733df41de1c5:
         .github/workflows/docker-build.yml:
-          - jobs.build.steps.[0].uses
-        .github/workflows/python-package.yml:
-          - jobs.build.steps.[0].uses
-  - action: actions/setup-python
-    refs:
-      - d09bd5e6005b175076f227b13d9730d56e9dcfcb
-    occurrences:
-      d09bd5e6005b175076f227b13d9730d56e9dcfcb:
+          - jobs.build.steps.[1].uses
         .github/workflows/python-package.yml:
           - jobs.build.steps.[1].uses
 external:
@@ -25,7 +18,24 @@ external:
     occurrences:
       0e68818ea37ba7728f417f03a58e06e68d9d2592:
         .github/workflows/docker-build.yml:
-          - jobs.build.steps.[1].uses
+          - jobs.build.steps.[2].uses
+  - action: step-security/harden-runner
+    refs:
+      - 9af89fc71515a100421586dfdb3dc9c984fbf411
+    occurrences:
+      9af89fc71515a100421586dfdb3dc9c984fbf411:
+        .github/workflows/docker-build.yml:
+          - jobs.build.steps.[0].uses
+        .github/workflows/python-package.yml:
+          - jobs.build.steps.[0].uses
+  - action: step-security/mise-action
+    refs:
+      - 2796166110dee826668caddd4bffedae5116e7cd
+    occurrences:
+      2796166110dee826668caddd4bffedae5116e7cd:
+        .github/workflows/python-package.yml:
+          - jobs.build.steps.[2].uses
 local: []
 docker: []
 dynamic: []
+nested_floating_deps: []

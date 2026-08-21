@@ -39,3 +39,5 @@ legacy/err.egg-info/
 
 # tox
 .tox
+
+.github/actions.lock.yaml
