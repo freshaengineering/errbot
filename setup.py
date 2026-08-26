@@ -30,6 +30,7 @@ deps = [
     "webtest==3.0.0",
     "setuptools==60.5.0",
     "flask==2.0.2",
+    "werkzeug==2.0.3",  # flask 2.0.2 imports werkzeug.urls.url_quote, removed in werkzeug>=2.1
     "requests==2.27.1",
     "jinja2==3.0.3",
     "pyOpenSSL==21.0.0",
