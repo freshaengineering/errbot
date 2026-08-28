@@ -33,7 +33,6 @@ deps = [
     "werkzeug==2.0.3",  # flask 2.0.2 imports werkzeug.urls.url_quote, removed in werkzeug>=2.1
     "requests==2.27.1",
     "jinja2==3.0.3",
-    "pyOpenSSL==26.2.0",  # 21.0.0 breaks against the cryptography version mise's python resolves (AttributeError: X509_V_FLAG_NOTIFY_POLICY)
     "colorlog==6.6.0",
     "markdown==3.3.6",
     "ansi==0.2.0",
@@ -45,6 +44,11 @@ deps = [
 
 if py_version < (3, 8):
     deps.append("importlib-metadata==4.12.0")
+    # 26.2.0 requires Python >=3.8; 21.0.0 breaks against the latest
+    # cryptography it resolves unpinned (AttributeError: GEN_EMAIL)
+    deps.append("pyOpenSSL==24.0.0")
+else:
+    deps.append("pyOpenSSL==26.2.0")
 
 if py_version < (3, 9):
     deps.append("graphlib-backport==1.0.3")
